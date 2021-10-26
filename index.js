@@ -5,7 +5,7 @@ require('dotenv').config();
 const ObjectId = require("mongodb").ObjectId;
 
 const cors = require("cors");
-const port = 5000;
+const port = process.env.PORT || 5000;
 
 // middlerware
 app.use(cors());
@@ -60,7 +60,6 @@ async function run() {
 run().catch(console.dir)
 
 
-
 app.get("/", (req, res) => {
     res.send("server is running...")
 })
@@ -68,9 +67,3 @@ app.get("/", (req, res) => {
 app.listen(port, () => {
     console.log("server port number is ", port)
 })
-
-// userName: firstmongodb
-// password: p8gAC5rC5O44f3r0
-
-// userName: mdalamin
-// passwrod: VZ3OMZFhBGty5f5Y
